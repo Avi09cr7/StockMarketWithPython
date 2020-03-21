@@ -1,0 +1,164 @@
+{% extends 'layouts/default/page.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+
+<center>
+    <h4>{% trans 'House Lists' %}</h4>
+    {% csrf_token %}
+    <style>
+    @-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel-inner .item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
+}
+
+    </style>
+
+
+    {% block pagination %}
+
+    <form method="get" action=" {% url 'accounts:searchHouse' %}">
+        Search For Houses:<input type="text" name="q" id="id_q" value="{{ query }}"/>
+        <input type="submit" value="Search"/>
+    </form>
+    {% if housedetail_list %}
+    <table class="table table-hover table-striped table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Owner Name</th>
+            <th>House No</th>
+            <th>House Name</th>
+            <th>Pin Code</th>
+            <th>Address</th>
+            <th>House Cost(in Rs.)</th>
+            <th>Contact No.</th>
+            <th>Email ID</th>
+            <th>Rent Available</th>
+            <th>Total Rooms</th>
+            <th>Rooms cost(for rent)</th>
+            <th>House Image</th>
+            <th>Room Image</th>
+
+
+        </tr>
+
+        {% for doc in housedetail_list %}
+        <tr>
+            <td>
+                {{ doc.id }}
+            </td>
+            <td>
+                {{ doc.owner_name }}
+            </td>
+            <td>
+                {{ doc.house_no }}
+            </td>
+            <td>
+                {{ doc.house_name }}
+            </td>
+            <td>
+                {{ doc.pincode }}
+            </td>
+            <td>
+                {{ doc.address }}
+            </td>
+            <td>
+                {{ doc.house_cost }}
+            </td>
+            <td>
+                {{ doc.contact_no }}
+            </td>
+            <td>
+                {{ doc.email }}
+            </td>
+
+            <td>
+                {{ doc.rented }}
+            </td>
+            <td>
+                {{ doc.rooms }}
+            </td>
+            <td>
+                {{ doc.rent_per_room }}
+            </td>
+
+            <td>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!--<ol class="carousel-indicators">-->
+                    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+
+                    <!--</ol>-->
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/media/{{ doc.house_image }}" alt="{{ doc.house_image }}" width="250px"
+                                 height="100px"></div>
+                    </div>
+                </div>
+            </td>
+            <td>
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!--<ol class="carousel-indicators">-->
+                    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+
+                    <!--</ol>-->
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/media/{{  doc.room_image }}" alt="{{ doc.room_image }}" width="250px"
+                                 height="100px"></div>
+                    </div>
+                </div>
+            </td>
+
+
+        </tr>
+
+
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <p>No Houses are available.</p>
+
+    {% endif %}
+    {% if is_paginated %}
+    <center>
+        <div>
+      <span class="page-links">
+ {% if page_obj.has_previous %}
+          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-primary">Previous</a>
+        {% endif %}
+        <span class="page-current">
+          <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+        </span>
+        {% if page_obj.has_next %}
+          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-primary">Next</a>
+        {% endif %}
+      </span>
+        </div>
+        {% endif %}
+        {% endblock%}
+    </center>
+    {% endblock %}

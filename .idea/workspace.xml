@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3baf318f-dfba-4d9a-9b17-1d253843774f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZMSvtywiXIFbK3kG2iC6ZX6ptk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="ics" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/accounts/templates" />
+      <recent name="$PROJECT_DIR$/source/content/media" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/source/accounts" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MusicGenerDjango" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/accounts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/accounts/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3baf318f-dfba-4d9a-9b17-1d253843774f" name="Default Changelist" comment="" />
+      <created>1554274004976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554274004976</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="325" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584648225425">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="325" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1739.939@0.0.1739.939" timestamp="1584648225425" />
+    <state x="650" y="225" key="FileChooserDialogImpl" timestamp="1584648121830">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="650" y="225" key="FileChooserDialogImpl/0.0.1739.939@0.0.1739.939" timestamp="1584648121830" />
+    <state x="691" y="386" key="Github.CreateGistDialog" timestamp="1584792203585">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="691" y="386" key="Github.CreateGistDialog/0.0.1739.939@0.0.1739.939" timestamp="1584792203585" />
+    <state x="379" y="113" key="SettingsEditor" timestamp="1584791919057">
+      <screen x="0" y="0" width="1739" height="939" />
+    </state>
+    <state x="379" y="113" key="SettingsEditor/0.0.1739.939@0.0.1739.939" timestamp="1584791919057" />
+  </component>
+</project>

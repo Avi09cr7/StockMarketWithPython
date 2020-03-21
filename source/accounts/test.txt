@@ -1,0 +1,43 @@
+
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([['Product Name', 'Price', 'Rating'], ['Samsung Galaxy M30 (Gradation Blue, 4+64 GB)', 14990, 4000.0], ['Samsung Galaxy M30 (Gradation Black, 4+64 GB)', 14990, 4000.0], ['Samsung Galaxy M20 (Ocean Blue, 4+64GB)', 12990, 3700.0], ['Samsung Galaxy M10 (Ocean Blue, 3+32GB)', 8990, 4100.0], ['Samsung Galaxy M10 (Charcoal Black, 3+32GB)', 8990, 4100.0], ['Samsung Galaxy M20 (Ocean Blue, 3+32GB)', 10990, 3700.0], ['Samsung Galaxy M20 (Charcoal Black, 4+64GB)', 12990, 3700.0], ['Samsung Galaxy M30 (Gradation Black, 6+128 GB)', 17990, 4100.0], ['Samsung Galaxy M30 (Gradation Blue, 6+128 GB)', 17990, 4100.0], ['Samsung Galaxy M20 (Charcoal Black, 3+32GB)', 10990, 3700.0], ['Samsung Galaxy M10 (Ocean Blue, 2+16GB)', 7990, 4100.0], ['Samsung Galaxy M10 (Charcoal Black, 2+16GB)', 7990, 4100.0], ['Samsung Galaxy A50 (Blue, 4GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers', 19990, 3700.0], ['Samsung Galaxy A50 (Black, 4GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers', 19990, 3700.0], ['Samsung Guru 1200 (GT-E1200, Black)', 1100, 4100.0], ['Samsung Guru Music 2 (Gold)', 1625, 4200.0], ['Samsung Guru Music 2 (SM-B310E, Blue)', 1625, 4200.0], ['Samsung Galaxy A30 (Black, 4GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers', 16990, 3500.0], ['Samsung Guru Music 2 (SM-B310E, Black)', 1625, 4200.0], ['Samsung Guru 1200 (GT-E1200, Indigo Blue)', 1100, 4100.0], ['Samsung Guru Music 2 SM-B310E (White)', 1625, 4200.0], ['Samsung Guru 1200 (Gold)', 1100, 4100.0], ['Samsung Guru FM Plus (SM-B110E/D, Dark Blue)', 1375, 4000.0], ['Samsung Galaxy A30 (Blue, 4GB RAM, 64GB Storage) with No Cost EMI/Additional Exchange Offers', 16990, 3300.0]]);
+
+            var options = {
+               title:'Amazon'
+            };
+            var chart = new google.visualization.BarChart(document.getElementById('piechart_amazon'));
+            chart.draw(data, options);
+        }
+
+        function drawChartFlipkart() {
+            var data = google.visualization.arrayToDataTable([['Product Name', 'Price', 'Rating'], ['Redmi Note 7 (Sapphire Blue, 64 GB)', 11999, 4500.0], ['Redmi Note 7 (Onyx Black, 64 GB)', 11999, 4500.0], ['Redmi Note 7 (Ruby Red, 64 GB)', 11999, 4500.0], ['Redmi Note 6 Pro (Black, 64 GB)', 11999, 4500.0], ['Redmi Go (Blue, 8 GB)', 4499, 4400.0], ['Redmi Note 7 Pro (Nebula Red, 64 GB)', 13999, 4600.0], ['Redmi Note 7 Pro (Space Black, 64 GB)', 13999, 4600.0], ['Redmi Go (Black, 8 GB)', 4499, 4400.0], ['Redmi 6 (Rose Gold, 32 GB)', 7999, 4400.0], ['Redmi Note 6 Pro (Red, 64 GB)', 11999, 4500.0], ['Redmi Note 6 Pro (Rose Gold, 64 GB)', 11999, 4500.0], ['Redmi Note 6 Pro (Blue, 64 GB)', 11999, 4500.0], ['Redmi Note 7 Pro (Neptune Blue, 128 GB)', 16999, 4700.0], ['Redmi Y2 (Black, 32 GB)', 8999, 4500.0], ['Redmi 6 (Blue, 32 GB)', 7999, 4400.0], ['Redmi 6 (Black, 32 GB)', 7999, 4400.0], ['Redmi 6 (Rose Gold, 64 GB)', 8499, 4400.0], ['Redmi Note 7 Pro (Neptune Blue, 64 GB)', 13999, 4600.0], ['Redmi 6 (Black, 64 GB)', 8499, 4400.0], ['Redmi Y2 (Blue, 32 GB)', 8999, 4500.0], ['Redmi Note 5 Pro (Gold, 64 GB)', 13999, 4500.0], ['Redmi 6 (Gold, 64 GB)', 8499, 4400.0], ['Redmi 6A (Rose Gold, 16 GB)', 6485, 4300.0], ['Redmi 6 (Gold, 32 GB)', 7999, 4400.0]]);
+
+            var options = {
+               title:'Flipkart'
+            };
+            var chart = new google.visualization.BarChart(document.getElementById('piechart_flipkart'));
+            chart.draw(data, options);
+        }
+function drawChartSnapdeal() {
+            var data = google.visualization.arrayToDataTable([['Product Name', 'Price', 'Rating'], ['Redmi Y1 (32GB, 3GB RAM)', 8990, 4000.0], ["Redmi 5A (32GB, 3GB RAM) - with 5'' HD Display", 7400, 4000.0], ['Redmi Blue Note 7 64GB', 13799, 4000.0], ['Redmi Blue Redmi 6 Pro 32GB', 8639, 4000.0], ['Redmi 6 (32GB, 3GB RAM)', 7599, 4000.0], ['Redmi 6 (32GB, 3GB RAM)', 7599, 4000.0], ['Redmi 6 (32GB, 3GB RAM)', 7599, 4000.0], ['Redmi A1 (64GB, 4GB RAM)', 13999, 4000.0], ['Redmi Note 4 (32GB, 3GB RAM)', 8679, 4000.0], ['Redmi 6A (16GB, 2GB RAM)', 6573, 4000.0], ['Redmi 6A (16GB, 2GB RAM)', 6399, 4000.0], ['Redmi 6A (16GB, 2GB RAM)', 6444, 4000.0], ['Redmi 6 (32GB, 3GB RAM)', 7599, 4000.0], ['Redmi Note 4 (64GB, 4GB RAM)', 9979, 4000.0], ["Redmi 5A (32GB, 3GB RAM) - with 5'' HD Display", 7400, 4000.0], ['Xiaomi Mi A2 (64GB, 4GB RAM)', 11750, 4000.0], ['Redmi Grey Note 4 64GB', 9991, 4000.0], ['Redmi Note 5 (64GB, 4GB RAM)', 10649, 4000.0], ['Redmi Y2 (32GB, 3GB RAM)', 8390, 4000.0], ['Xiaomi Mi A2 (64GB, 4GB RAM)', 12300, 4000.0]]);
+
+          var options = {
+    hAxis: {
+      title: 'Time'
+    },
+    vAxis: {
+      title: 'Popularity'
+    }
+  };
+            var chart = new google.visualization.BarChart(document.getElementById('piechart_snapdeal'));
+            chart.draw(data, options);
+        }
+        $(window).resize(function () {        //to make chart Responsive
+            drawChart();
+            drawChartFlipkart();
+            drawChartSnapdeal();
+        });
+

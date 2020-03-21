@@ -1,0 +1,108 @@
+{% extends 'layouts/default/page.html' %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<script src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<h4>{% trans 'Stock Market Prediction' %}</h4>
+
+{% if prediction %}
+<script type="text/javascript">
+google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChartSnapdeal);
+    function drawChartSnapdeal() {
+           var data = google.visualization.arrayToDataTable({{ stockList|safe }});
+
+              var options = {
+               title: "Stock Prices",
+bar: {groupWidth: "95%"},
+
+ legend: { position: "none" },
+    hAxis: {
+      title: 'Date'
+    },
+    vAxis: {
+      title: 'Price'
+    }
+  };
+            var chart = new google.visualization.ColumnChart(document.getElementById('piechart_stock'));
+            chart.draw(data, options);
+        }
+         $(window).resize(function () {        //to make chart Responsive
+
+            drawChartSnapdeal();
+        });
+
+
+
+
+</script>
+<div align="center">
+    <!--    'blues':blues,'classical':classical,'country':country,'disco':disco,'hiphop':hiphop,-->
+    <!--                                                'jazz':jazz,'metal':metal,'pop':pop,'reggae':reggae,'rock':rock-->
+
+    <h1>Predicted Value: {{ prediction }} </h1>
+
+
+</div>
+{% endif %}
+<div align="center">
+    <form method="post" action=" {% url 'accounts:predictStockPrice' %}">
+        {% csrf_token %}
+        Predict Stock Price
+
+        <input type="number" name="txtdate" id="id_q" value="{{ query }}" class="form-control input-sm"
+               placeholder="Enter Date" required/>
+
+        <input type="submit" value="Check" class="btn-primary"/>
+
+        <br>
+        </table>
+
+    </form>
+</div>
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div id="piechart_stock" style="width: 100%; min-height: 550px;"></div>
+    </div>
+
+</div>
+<center>
+
+    {% csrf_token %}
+    <style>
+    @-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel-inner .item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
+}
+
+
+
+
+    </style>
+
+
+    {% endblock %}

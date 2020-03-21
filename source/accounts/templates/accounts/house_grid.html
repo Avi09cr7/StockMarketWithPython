@@ -1,0 +1,119 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+<h4>{% trans 'Search House' %}</h4>
+
+ {% csrf_token %}
+<div align="center">
+   <form method="get" action=" {% url 'accounts:gridSearch' %}">
+
+            Search Houses
+
+            <input type="text" name="q" id="id_q" value="{{ query }}" class="form-control input-sm" placeholder="House No/OwnerName/Pincode/Address" required/>
+
+        <input type="submit" value="Search" class="btn-primary" />
+
+<br>
+</table>
+
+</form>
+</div>
+
+<center>
+
+    {% csrf_token %}
+    <style>
+    @-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel-inner .item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
+}
+
+    </style>
+
+
+    {% block pagination %}
+{%
+    count=0
+    %}
+
+    {% if housedetail_list %}
+    <table class="table table-hover table-striped table-dark">
+
+
+        {% for doc in housedetail_list %}
+        {{count+=1}}
+        <tr>
+            <td>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!--<ol class="carousel-indicators">-->
+                    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+
+                    <!--</ol>-->
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/media/{{ doc.house_image }}" alt="{{ doc.house_image }}" width="250px"
+                                 height="100px"></div>
+                    </div>
+                     <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/media/{{  doc.room_image }}" alt="{{ doc.room_image }}" width="250px"
+                                 height="100px"></div>
+                    </div>
+                </div>
+            </td>
+
+
+        </tr>
+
+
+        {% endfor %}
+    </table>
+
+    {% else %}
+
+
+    {% endif %}
+    {% if is_paginated %}
+    <center>
+        <div>
+      <span class="page-links">
+ {% if page_obj.has_previous %}
+          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="btn btn-primary">Previous</a>
+        {% endif %}
+        <span class="page-current">
+          <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
+        </span>
+        {% if page_obj.has_next %}
+          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="btn btn-primary">Next</a>
+        {% endif %}
+      </span>
+        </div>
+        {% endif %}
+        {% endblock%}
+    </center>
+
+{% endblock %}
